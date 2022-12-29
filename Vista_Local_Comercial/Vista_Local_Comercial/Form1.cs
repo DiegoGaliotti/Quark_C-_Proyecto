@@ -6,5 +6,10 @@ namespace Vista_Local_Comercial
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
