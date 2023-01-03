@@ -97,8 +97,16 @@ namespace Proyecto_Local_Comercia_V2.Presentador_Local_Comercial
 
             foreach (Prenda prenda in vendedor.Tienda.ListadoPrendas)
             {
-                if (prenda.Nombre == vendedor.HistoriaCotizaciones[ultimoValorCotizado].PrendaCotizada.Nombre)
-                    return prenda.Stock;
+                try
+                {
+                    if (prenda.Nombre == vendedor.HistoriaCotizaciones[ultimoValorCotizado].PrendaCotizada.Nombre)
+                        return prenda.Stock;
+                }
+                catch(Exception ex)
+                {
+
+                }
+
             }
             return vendedor.Tienda.ListadoPrendas.Count;
         }

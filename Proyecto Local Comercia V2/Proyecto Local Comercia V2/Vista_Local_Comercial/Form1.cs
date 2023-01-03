@@ -44,15 +44,23 @@ namespace Proyecto_Local_Comercia_V2
         }
         private void button_cotizar_Click(object sender, EventArgs e)
         {
-            double precioCotizacion = presentador.cotizarPrenda(radioButton_Pantalon.Checked, double.Parse(textBox_precioUnitario.Text), int.Parse(textBox_cantidad.Text), checkBox_chupin.Checked, checkBox_cuelloMao.Checked, checkBox_mangaLarga.Checked, radioButton_Premium.Checked);
-            label_precioFinal.Text = Math.Round(precioCotizacion,2).ToString();
-            if (presentador.verStockTienda() < int.Parse(textBox_cantidad.Text))
+            try
             {
-                label_stockActual.Text = "Falta de Stock en tienda";
+                double precioCotizacion = presentador.cotizarPrenda(radioButton_Pantalon.Checked, double.Parse(textBox_precioUnitario.Text), int.Parse(textBox_cantidad.Text), checkBox_chupin.Checked, checkBox_cuelloMao.Checked, checkBox_mangaLarga.Checked, radioButton_Premium.Checked);
+                label_precioFinal.Text = Math.Round(precioCotizacion, 2).ToString();
+                
+                if (presentador.verStockTienda() < int.Parse(textBox_cantidad.Text))
+                {
+                    label_stockActual.Text = "Falta de Stock en tienda";
+                }
+                else
+                {
+                    label_stockActual.Text = presentador.verStockTienda().ToString();
+                }
             }
-            else
+            catch (Exception)
             {
-                label_stockActual.Text = presentador.verStockTienda().ToString();
+                label_precioFinal.Text = "Revisar Precio Unitario y Cantidad";
             }
         }
         private void linkLabel_historial_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
