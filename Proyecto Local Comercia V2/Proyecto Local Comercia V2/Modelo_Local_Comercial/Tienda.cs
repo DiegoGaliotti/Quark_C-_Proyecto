@@ -14,9 +14,9 @@ namespace Proyecto_Local_Comercia_V2.Modelo_Local_Comercial
         private List<Prenda> listadoPrendas;
 
         //Propiedades
-        public string Nombre { get { return nombre; } }
-        public string Direccion { get { return direccion; } }
-        public List<Prenda> ListadoPrendas { get { return listadoPrendas; } set { listadoPrendas = value; } }
+        public string Nombre { get { return nombre; } } //Solo geteamos ya que todo lo que cargue se hará desde el constructor. 
+        public string Direccion { get { return direccion; } } //Solo geteamos ya que todo lo que cargue se hará desde el constructor.
+        public List<Prenda> ListadoPrendas { get { return listadoPrendas; } } //Solo geteamos ya que todo lo que cargue se hará desde el metodo ingreso de mercadería. 
 
         //Constructor
         public Tienda(string nom, string dir)

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Local_Comercia_V2.Modelo_Local_Comercial
 {
-    internal class Camisa : Prenda
+    public class Camisa : Prenda
     {
         //Atributos
         private bool mangaLarga = false;
         private bool cuelloMao = false;
 
         //Propiedades
-        public bool MangaLarga { get { return mangaLarga; } set { mangaLarga = value; } }
-        public bool CuelloMao { get { return cuelloMao; } set { cuelloMao = value; } }
+        public bool MangaLarga { get { return mangaLarga; } set { mangaLarga = value; } } //Para cargar y ver desde afuera 
+        public bool CuelloMao { get { return cuelloMao; } set { cuelloMao = value; } } //Para cargar y ver desde afuera 
 
         //Método
         public override double precioFinal(double precioBase)

@@ -12,7 +12,7 @@ namespace Proyecto_Local_Comercia_V2.Modelo_Local_Comercial
         private bool chupin = false;
 
         //Propiedades
-        public bool Chupin { get { return chupin; } set { chupin = value; } }
+        public bool Chupin { get { return chupin; } set { chupin = value; } } //Para cargar y ver desde afuera 
 
         //Método
         public override double precioFinal(double precioBase)

@@ -42,9 +42,7 @@ namespace Proyecto_Local_Comercia_V2.Presentador_Local_Comercial
             foreach (var cot in vendedor.HistoriaCotizaciones)
             {
                 string id = cot.IdCotizacion.ToString();
-                string vendedor = cot.IdVendedor.ToString();
                 string nombrePrenda = cot.PrendaCotizada.Nombre.ToString();
-                string fecha = cot.FechaCotizacion.ToString();
                 string cant = cot.CantidadUnidadesCotizadas.ToString();
                 string precioFinal = cot.PrecioCotizacion.ToString();
                 listaCotizaciones.Add( id + "-  Nombre: ´" + nombrePrenda + "´ - Cant: " + cant+" - Precio: $"+ precioFinal);
